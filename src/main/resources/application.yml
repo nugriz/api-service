@@ -1,0 +1,27 @@
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+server:
+  port: 8080
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka 
+
+spring:
+  application:
+    name: api-service
+  cloud:
+    gateway:
+      routes:
+      - id: hardware-service
+        uri: lb://HARDWARE-SERVICE
+        predicates:
+        - Path=/api/hardware/**
+      - id: software-service
+        uri: lb://SOFTWARE-SERVICE
+        predicates:
+        - Path=/api/software/**

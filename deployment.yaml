@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment # Kubernetes resource kind we are creating
+metadata:
+  name: api-gateway-service-zuul
+spec:
+  selector:
+    matchLabels:
+      app: api-gateway-service-zuul
+  replicas: 1 # Number of replicas that will be created for this deployment
+  template:
+    metadata:
+      labels:
+        app: api-gateway-service-zuul
+    spec:
+      containers:
+        - name: api-gateway-service-zuul
+          image: rizkinu/api-service:1.3
+          env:
+          - name: ENV_SERVER_EUREKA
+            value: 'http://127.0.0.1:63739/eureka'
+# Image that will be used to containers in the cluster
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8092
+# The port that the container is running on in the cluster

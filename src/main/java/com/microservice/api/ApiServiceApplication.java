@@ -25,12 +25,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableZuulProxy
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = { "com.microservice.api" })// gabisa swagger, tpi bisa zuul
+@ComponentScan(basePackages = { "com.microservice" })// gabisa swagger, tpi bisa zuul
 //@ComponentScan(basePackages = { "HAHAHAHAHAHAHA" })// gabisa swagger, tpi bisa zuul
 //@ComponentScan(basePackages = { "com.microservice" }) // bisa swagger, tpi gbisa zuul
-//@ComponentScan()// bisa swagger, gbisa zuul
-//@ComponentScan// sama
-//@ComponentScan(basePackages = { "com.microservice" })
 @RestController
 @EnableDiscoveryClient
 @EnableConfigurationProperties

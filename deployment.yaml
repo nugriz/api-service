@@ -14,7 +14,7 @@ spec:
         app: api-service
     spec:
       containers:
-        - name: api-gateway-service-zuul
+        - name: api-service
           image: rizkinu/api-service:1.8
           env:
           - name: ENV_SERVER_EUREKA

@@ -24,6 +24,7 @@ public class DocumentationController implements SwaggerResourcesProvider {
         resources.add(swaggerResource("hardware-service", "/api/hardware-service/v2/api-docs", "2.0"));
         resources.add(swaggerResource("software-service", "/api/software-service/v2/api-docs", "2.0"));
         resources.add(swaggerResource("producer", "/api/producer/v2/api-docs", "2.0"));
+        //resources.add(swaggerResource("producer", "http://localhost:8092/api/producer/v2/api-docs", "2.0"));
         return resources;
     }
     public void run(String... args) throws Exception {

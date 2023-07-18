@@ -1,3 +1,4 @@
+
 ### Gajadi dipake ###
 apiVersion: apps/v1
 kind: Deployment # Kubernetes resource kind we are creating
@@ -15,7 +16,7 @@ spec:
     spec:
       containers:
         - name: api-service
-          image: rizkinu/api-service:1.8
+          image: rizkinu/api-service:2.3
           env:
           - name: ENV_SERVER_EUREKA
             value: 'http://discovery-service:8761/eureka'

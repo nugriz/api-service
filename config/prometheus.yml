@@ -1,0 +1,31 @@
+scrape_configs:
+  - job_name: 'api-service'
+    scrape_interval: 2s
+    metrics_path: '/actuator/prometheus' ##prometheus endpoint
+    static_configs:
+      - targets: ['localhost:8092'] ## host and port for your mis
+  - job_name: 'hardware-service'
+    scrape_interval: 2s
+    metrics_path: '/actuator/prometheus' ##prometheus endpoint
+    static_configs:
+      - targets: ['localhost:8081'] ## host and port for your mis
+  - job_name: 'software-service'
+    scrape_interval: 2s
+    metrics_path: '/actuator/prometheus' ##prometheus endpoint
+    static_configs:
+      - targets: ['localhost:8082'] ## host and port for your mis
+  - job_name: 'discovery-service'
+    scrape_interval: 2s
+    metrics_path: '/actuator/prometheus' ##prometheus endpoint
+    static_configs:
+      - targets: ['localhost:8761'] ## host and port for your mis
+  - job_name: 'producer'
+    scrape_interval: 2s
+    metrics_path: '/actuator/prometheus' ##prometheus endpoint
+    static_configs:
+      - targets: ['localhost:8080'] ## host and port for your mis
+  - job_name: 'consumer'
+    scrape_interval: 2s
+    metrics_path: '/actuator/prometheus' ##prometheus endpoint
+    static_configs:
+      - targets: ['localhost:8083'] ## host and port for your mis

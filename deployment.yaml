@@ -1,5 +1,3 @@
-
-### Gajadi dipake ###
 apiVersion: apps/v1
 kind: Deployment # Kubernetes resource kind we are creating
 metadata:
@@ -16,10 +14,12 @@ spec:
     spec:
       containers:
         - name: api-service
-          image: rizkinu/api-service:2.3
+          image: rizkinu/api-service:2.6
           env:
           - name: ENV_SERVER_EUREKA
             value: 'http://discovery-service:8761/eureka'
+          - name: ENV_SERVER_PORT
+            value: '8092'
 # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
           ports:
